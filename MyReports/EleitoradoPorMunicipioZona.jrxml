@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-08-24T22:33:56 -->
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EleitoradoPorMunicipioZona" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02757077-ba6f-4ab8-9038-25d972b99f64">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="217"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="776"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Cad-Producao"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT "ADMCAD"."SECAO"."NUM_SECAO",
 	"ADMCAD"."SECAO"."QTD_APTOS",
@@ -43,6 +42,96 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 	<field name="QTD_CANCELADOS" class="java.math.BigDecimal"/>
 	<field name="QTD_SUSPENSOS" class="java.math.BigDecimal"/>
 	<field name="QTD_VAGAS_RESERVADAS" class="java.math.BigDecimal"/>
+	<variable name="QTD_APTOS1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{QTD_APTOS}]]></variableExpression>
+	</variable>
+	<variable name="QTD_CANCELADOS1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{QTD_CANCELADOS}]]></variableExpression>
+	</variable>
+	<variable name="QTD_SUSPENSOS1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{QTD_SUSPENSOS}]]></variableExpression>
+	</variable>
+	<variable name="QTD_VAGAS_RESERVADAS1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{QTD_VAGAS_RESERVADAS}]]></variableExpression>
+	</variable>
+	<group name="PorZona">
+		<groupExpression><![CDATA[$F{NUM_ZONA}]]></groupExpression>
+		<groupFooter>
+			<band height="37">
+				<textField>
+					<reportElement x="382" y="11" width="68" height="14" uuid="ab2f7e88-7b22-427f-99f5-73c266ef8971">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NUM_ZONA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="732" y="11" width="69" height="14" uuid="bfc92ef3-1be6-4eb7-b69c-bf7337b05117">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$V{QTD_VAGAS_RESERVADAS1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="521" y="11" width="69" height="14" uuid="036597c4-3822-4757-b5f5-d269e1426281">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$V{QTD_APTOS1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="662" y="11" width="69" height="14" uuid="813bffe0-89d8-417d-a758-9f9e634449d0"/>
+					<textFieldExpression><![CDATA[$V{QTD_SUSPENSOS1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="592" y="11" width="69" height="14" uuid="84df5157-2580-489e-9667-14e0c8f11327"/>
+					<textFieldExpression><![CDATA[$V{QTD_CANCELADOS1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="PorMunicipio">
+		<groupExpression><![CDATA[$F{NOM_LOCALIDADE}]]></groupExpression>
+		<groupFooter>
+			<band height="40">
+				<textField>
+					<reportElement x="0" y="12" width="80" height="16" uuid="379892fb-0863-470f-8d25-0dd0681e48ab"/>
+					<textFieldExpression><![CDATA[$F{COD_LOCALIDADE_TSE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="12" width="301" height="16" uuid="e5905478-d72f-4ef8-918c-134491e98d76">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{NOM_LOCALIDADE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="591" y="12" width="69" height="14" uuid="e7a9b88f-4fe3-4af0-a6b8-615e40b69f12"/>
+					<textFieldExpression><![CDATA[$V{QTD_CANCELADOS1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="520" y="12" width="69" height="14" uuid="7668ee3c-34ce-4ea1-b1e1-4169fd81cb5a">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$V{QTD_APTOS1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="731" y="12" width="69" height="14" uuid="ef09cbab-9da2-4404-a549-d8698872c97a">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$V{QTD_VAGAS_RESERVADAS1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="661" y="12" width="69" height="14" uuid="e01aad47-bd0a-44f7-a3d2-859accc29c2c"/>
+					<textFieldExpression><![CDATA[$V{QTD_SUSPENSOS1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -50,10 +139,23 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 		<band height="79" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="21" width="280" height="20" uuid="d5f67603-0006-4732-ae62-a548ee311e83"/>
+				<text><![CDATA[ELO - Cadastro Eleitorla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="20" uuid="a2dfbb42-9775-4890-abb0-18a1d9e49129"/>
+				<text><![CDATA[Justiça Eleitoral - XXª Zona/UF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="280" height="20" uuid="4af13d1e-3a24-4131-8281-ad8f803dc808"/>
+				<text><![CDATA[Distribuição de Eleitorald por Município / Zona]]></text>
+			</staticText>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="18" splitType="Stretch">
+		<band height="19" splitType="Stretch">
 			<staticText>
 				<reportElement x="450" y="0" width="71" height="14" uuid="f0141ffe-4777-4ee1-8e7b-5783078c4646">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -91,10 +193,37 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 				</textElement>
 				<text><![CDATA[Reservadas]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="379" y="0" width="71" height="14" uuid="f6de9cd8-26b0-49de-aaa5-6d4b88876479">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Zona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="3" width="71" height="14" uuid="dcafba34-afba-45ff-9ef7-ce3b134c0622">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="3" width="308" height="14" uuid="7f1a0ac8-ae21-40b3-a57b-b5fe92ee8925">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Município]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="21" splitType="Stretch">
+		<band height="19" splitType="Stretch">
 			<textField>
 				<reportElement x="450" y="5" width="71" height="14" uuid="3336d113-b1bf-40d7-97a2-eade04956fa3"/>
 				<textFieldExpression><![CDATA[$F{NUM_SECAO}]]></textFieldExpression>
@@ -117,13 +246,66 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="600" y="16" width="100" height="14" uuid="4c87f653-a22e-4949-9728-beaacf4abd72">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="700" y="16" width="100" height="14" uuid="eac7d6b6-9fac-431e-bca6-1011e2bac3b0"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="4" y="36" width="100" height="14" uuid="5e3656a1-50b0-4847-895d-a105d9804528">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="732" y="10" width="69" height="18" uuid="225ce9c9-8524-4224-a1ee-62fdb15f8a51">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{QTD_VAGAS_RESERVADAS1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="521" y="10" width="69" height="18" uuid="84faccce-2779-4304-a399-7f45cc9e2ff4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{QTD_APTOS1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="662" y="10" width="69" height="18" uuid="98c13568-54cd-4cdb-b00e-587c42b642f8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{QTD_SUSPENSOS1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="592" y="10" width="69" height="18" uuid="04b479da-506b-4dd9-8cb9-81ba6a7397fc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{QTD_CANCELADOS1}]]></textFieldExpression>
+			</textField>
+		</band>
 	</summary>
 </jasperReport>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-08-25T22:32:51 -->
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8715e970-700a-489e-a3c0-cc67d66223d8">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Cad-Producao"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -84,36 +83,42 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 		</groupHeader>
 		<groupFooter>
 			<band height="43">
+				<rectangle>
+					<reportElement key="" x="0" y="0" width="555" height="43" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#CFCFCF" uuid="a566cff1-fd4f-4458-8089-f93984fabfda"/>
+					<graphicElement>
+						<pen lineColor="#000000"/>
+					</graphicElement>
+				</rectangle>
 				<textField>
-					<reportElement x="279" y="12" width="69" height="31" forecolor="#FC0905" uuid="ce5ad9fc-9c3b-4162-ae24-ab7a3617a1c5"/>
+					<reportElement x="279" y="4" width="69" height="31" forecolor="#FC0905" uuid="ce5ad9fc-9c3b-4162-ae24-ab7a3617a1c5"/>
 					<textElement>
 						<font size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{APTOS3}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="348" y="12" width="69" height="31" forecolor="#FC0905" uuid="ecea558d-babd-48c7-a6de-91c19d63716a"/>
+					<reportElement x="348" y="4" width="69" height="31" forecolor="#FC0905" uuid="ecea558d-babd-48c7-a6de-91c19d63716a"/>
 					<textElement>
 						<font size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{CANCELADOS3}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="417" y="12" width="69" height="31" forecolor="#FC0905" uuid="bb300551-1df6-4204-b2d0-689984862435"/>
+					<reportElement x="417" y="4" width="69" height="31" forecolor="#FC0905" uuid="bb300551-1df6-4204-b2d0-689984862435"/>
 					<textElement>
 						<font size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{SUSPENSOS3}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="486" y="12" width="69" height="31" forecolor="#FC0905" uuid="74480c87-9b09-4fb2-b2e9-dd3abbcfdf74"/>
+					<reportElement x="486" y="4" width="69" height="31" forecolor="#FC0905" uuid="74480c87-9b09-4fb2-b2e9-dd3abbcfdf74"/>
 					<textElement>
 						<font size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{RESERVADAS3}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="178" y="12" width="100" height="30" forecolor="#FF0000" uuid="426ea206-dc06-476b-acc0-61014ed29e49"/>
+					<reportElement x="178" y="4" width="100" height="30" forecolor="#FF0000" uuid="426ea206-dc06-476b-acc0-61014ed29e49"/>
 					<textElement>
 						<font size="14" isBold="true"/>
 					</textElement>
@@ -136,37 +141,43 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="53">
+			<band height="41">
+				<rectangle>
+					<reportElement key="" x="0" y="0" width="555" height="41" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#E0E0E0" uuid="b11974bc-cdcd-472d-997d-1ec8786d9093"/>
+					<graphicElement>
+						<pen lineColor="#000000"/>
+					</graphicElement>
+				</rectangle>
 				<textField>
-					<reportElement x="3" y="12" width="275" height="28" forecolor="#0F26F7" uuid="2a042449-33e6-4ec5-abcd-7a5a3a432c7a"/>
+					<reportElement x="3" y="5" width="275" height="28" forecolor="#0F26F7" uuid="2a042449-33e6-4ec5-abcd-7a5a3a432c7a"/>
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Totais do Município: " + $F{MUNICIPIO}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="279" y="12" width="69" height="28" forecolor="#0F26F7" uuid="22fb3f77-4c31-4ce2-838a-1e3679c3eac0"/>
+					<reportElement x="279" y="5" width="69" height="28" forecolor="#0F26F7" uuid="22fb3f77-4c31-4ce2-838a-1e3679c3eac0"/>
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{APTOS2}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="348" y="12" width="69" height="28" forecolor="#0F26F7" uuid="d486d6a4-49f7-473b-bb0f-a7f5048beb2d"/>
+					<reportElement x="348" y="5" width="69" height="28" forecolor="#0F26F7" uuid="d486d6a4-49f7-473b-bb0f-a7f5048beb2d"/>
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{CANCELADOS2}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="417" y="12" width="69" height="28" forecolor="#0F26F7" uuid="5468e020-1df1-493d-a955-756f1c49f990"/>
+					<reportElement x="417" y="5" width="69" height="28" forecolor="#0F26F7" uuid="5468e020-1df1-493d-a955-756f1c49f990"/>
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{SUSPENSOS2}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="486" y="12" width="69" height="28" forecolor="#0F26F7" uuid="ae00145e-ea48-4b76-9682-1863ba3615da"/>
+					<reportElement x="486" y="5" width="69" height="28" forecolor="#0F26F7" uuid="ae00145e-ea48-4b76-9682-1863ba3615da"/>
 					<textElement>
 						<font size="12" isBold="true"/>
 					</textElement>
@@ -189,7 +200,13 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="33">
+			<band height="32">
+				<rectangle>
+					<reportElement key="" x="0" y="0" width="555" height="32" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#CFCFCF" uuid="cef02773-21c2-4c3e-871d-32260657d90b"/>
+					<graphicElement>
+						<pen lineColor="#000000"/>
+					</graphicElement>
+				</rectangle>
 				<textField>
 					<reportElement stretchType="ContainerHeight" x="3" y="7" width="267" height="15" uuid="687ca112-17f7-4d93-bb2d-f0494e7b6c19"/>
 					<textElement>
@@ -238,6 +255,13 @@ ORDER BY "ADMCAD"."UF"."SGL_UF" ASC,
 	</title>
 	<pageHeader>
 		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement key="" x="0" y="0" width="555" height="20" forecolor="rgba(0, 0, 0, 0.0)" backcolor="#B5B5B5" uuid="0dc4c7c7-f404-4871-b710-cc85c8eacd03"/>
+				<graphicElement>
+					<pen lineColor="#000000"/>
+				</graphicElement>
+			</rectangle>
 			<textField>
 				<reportElement x="0" y="2" width="340" height="18" uuid="3ba03ae7-611e-4c52-a73b-a126dfd1ba00"/>
 				<textElement>
